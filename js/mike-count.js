@@ -125,28 +125,28 @@ function post_ajax(){
     }
 
 
-    //取得 訂單編號
-    var order_id = "";
-    const order_id_url = url + "?action=getOrderId";
-    var xhttp = new XMLHttpRequest();
-    xhttp.open("GET", order_id_url, true);
-    xhttp.onload = function(event) {
-        if (xhttp.status == 200) {
-            order_id = this.responseText;
-        } else {
-            alert("GET order_id error:(" + xhttp.status + ") " + this.responseText);
-            return true;
-        }
-    }
-    xhttp.send(null);
-    // xhttp.send();
-    console.log("order_id:" + order_id);
+    //取得 訂單編號 (棄用，訂單編號由server端確認訂單成立後再回傳到client頁面)
+    // var order_id = "";
+    // const order_id_url = url + "?action=getNewOrderId";
+    // var xhttp = new XMLHttpRequest();
+    // xhttp.open("GET", order_id_url, true);
+    // xhttp.onload = function(event) {
+    //     if (xhttp.status == 200) {
+    //         order_id = this.responseText;
+    //     } else {
+    //         alert("GET order_id error:(" + xhttp.status + ") " + this.responseText);
+    //         return true;
+    //     }
+    // }
+    // xhttp.send(null);
+    // // xhttp.send();
+    // console.log("order_id:" + order_id);
 
 
     const data_json = {
         "verification_code": "romantic_hills",
         "order_info": {
-          "order_id": order_id,
+        //   "order_id": order_id,
           "name": o_name,
           "tel": o_tel,
           "payment": o_payment,
@@ -159,12 +159,13 @@ function post_ajax(){
     }
 
     //send post
-    // var xhttp = new XMLHttpRequest();
+    var xhttp = new XMLHttpRequest();
     // xhttp.open("POST", "ajax_files.php", true);
     xhttp.open("POST", url, true);
-    xhttp.setRequestHeader("Content-Type", "application/json");
+    // xhttp.setRequestHeader("Content-Type", "application/json");
+    xhttp.setRequestHeader("Content-Type", "text/plain");
     xhttp.onload = function(event) {
-        //顯示結果
+        //TODO 顯示結果
         // oOutput = document.querySelector('#show-result');
         if (xhttp.status == 200) {
             //回傳json
@@ -174,6 +175,8 @@ function post_ajax(){
             // }
             var json = JSON.parse(this.responseText);
             console.log("rtn_json:" + this.responseText);
+            //收到成功的json: rtn_json:{"status":1,"msg":"send line notify successful.","order_id":"60001"}
+
             // oOutput.innerHTML = this.responseText;
         } else {
             // oOutput.innerHTML = "Error " + xhttp.status + " occurred when trying to upload your file.";
