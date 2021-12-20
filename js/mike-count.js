@@ -198,7 +198,7 @@ function post_ajax(){
                 alert_str += "\n" + "訂單成立時間" + ": " + response_body.send_data["訂單成立時間"];
                 const order_info = response_body.send_data["訂單資訊"];
                 for (const [key, value] of Object.entries(order_info)) {
-                    if(key.toString() == "外送地圖連結"){
+                    if(key.toString() == "外送地圖連結" || key.toString() == "訂單內容"){
                         continue;
                     }
                     alert_str += "\n" + key.toString() + ": " + value.toString();
