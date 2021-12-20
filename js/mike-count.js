@@ -165,17 +165,47 @@ function post_ajax(){
     // xhttp.setRequestHeader("Content-Type", "application/json");
     xhttp.setRequestHeader("Content-Type", "text/plain");
     xhttp.onload = function(event) {
-        //TODO 顯示結果
+        
         // oOutput = document.querySelector('#show-result');
         if (xhttp.status == 200) {
             //回傳json
             // const response_body = {
-            //     "status": 0,
-            //     "msg": "null"
+            //     "status": 1,
+            //     "msg": "send line notify successful.",
+            //     "send_data" = send_data
             // }
-            var json = JSON.parse(this.responseText);
+            const response_body = JSON.parse(this.responseText);
             console.log("rtn_json:" + this.responseText);
             //收到成功的json: rtn_json:{"status":1,"msg":"send line notify successful.","order_id":"60001"}
+            if (response_body.status == 1){
+                //跳alert顯示 訂單資訊
+                // const send_data = {
+                //     "訂單成立時間": order_time,
+                //     "訂單資訊": {
+                //       "訂單編號": o_order_id,
+                //       "顧客姓名": o_name,
+                //       "聯絡電話": o_tel,
+                //       "付款方式": send_o_payment,
+                //       "取餐方式": send_o_order_type,
+                //       "外送地址": o_delivery_addr,
+                //       "外送地圖連結": "https://www.google.com/maps/dir//" + o_delivery_addr +"/",
+                //       "取餐時間": o_meal_time,
+                //       "總金額": sheet_total_price,
+                //       "訂單內容": send_re_order_list
+                //     }
+                //   }
+                var alert_str = "您的訂單已成立，資訊如下:";
+                for (const [key, value] of Object.entries(response_body.send_data)) {
+                    if(key.toString() == "外送地圖連結"){
+                        continue;
+                    }
+                    alert_str += "\n" + key.toString() + ": " + value.toString();
+                }
+                alert(alert_str);
+            }else{
+                alert("發生錯誤: " + response_body.msg);
+            }
+
 
             // oOutput.innerHTML = this.responseText;
         } else {
