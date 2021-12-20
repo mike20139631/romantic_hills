@@ -195,7 +195,9 @@ function post_ajax(){
                 //     }
                 //   }
                 var alert_str = "您的訂單已成立，資訊如下:";
-                for (const [key, value] of Object.entries(response_body.send_data)) {
+                alert_str += "\n" + "訂單成立時間" + ": " + response_body.send_data["訂單成立時間"];
+                const order_info = response_body.send_data["訂單資訊"];
+                for (const [key, value] of Object.entries(order_info)) {
                     if(key.toString() == "外送地圖連結"){
                         continue;
                     }
