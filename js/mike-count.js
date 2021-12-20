@@ -204,6 +204,8 @@ function post_ajax(){
                     alert_str += "\n" + key.toString() + ": " + value.toString();
                 }
                 alert(alert_str);
+                //rtn_json:{"status":1,"msg":"send line notify successful.","send_data":{"訂單成立時間":"2021-12-20 9:44:24","訂單資訊":{"訂單編號":"60002","顧客姓名":"mmm","聯絡電話":"mmm","付款方式":"現金","取餐方式":"外帶","取餐時間":"2021-12-18 17:30:00","總金額":45,"訂單內容":[{}] }}}
+                //rtn_json:{"status":1,"msg":"send line notify successful.","send_data":{"訂單成立時間":"2021-12-20 9:47:37","訂單資訊":{"訂單編號":"60003","顧客姓名":"mmm","聯絡電話":"mmm","付款方式":"轉帳","取餐方式":"外送","外送地址":"苗栗縣後龍鎮埔頂里8鄰60-1號","外送地圖連結":"https://www.google.com/maps/dir//苗栗縣後龍鎮埔頂里8鄰60-1號/","取餐時間":"2021-12-18 17:30:00","總金額":190,"訂單內容":"[{},{},{}]"}}}
             }else{
                 alert("發生錯誤: " + response_body.msg);
             }
