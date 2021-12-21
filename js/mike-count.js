@@ -10,7 +10,7 @@ $('input[type=radio][name=orderType]').on('change', function() { //可行
     $("#o_delivery_addr").hide();
     $("#store_addr").hide();
 
-    $("#delivery_mark").hide();
+    // $("#delivery_mark").hide(); //暫時拿掉
     
     if (this.value == '0'){
         //外帶
@@ -19,7 +19,7 @@ $('input[type=radio][name=orderType]').on('change', function() { //可行
         //外送
         $("#o_delivery_addr").show();
         //外送時，顯示備註
-        $("#delivery_mark").show();
+        // $("#delivery_mark").show(); //暫時拿掉
     }    
 });
 
