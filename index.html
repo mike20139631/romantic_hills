@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="css/scrolltop_themes/tab.css">
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
   <!-- <link rel="stylesheet" href="css/fontawesome.min.css"> -->
+  <!-- <link rel="stylesheet" href="animate.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.css">
 </head>
 <body>
   <div class="flex flex-col h-screen w-screen justify-between min-w-min">
@@ -177,12 +179,34 @@
         </div>
       </div>
     </div>
-    <footer id="section4" data-scroll-index="4" class="p-10 border flex flex-col space-y-5 items-center" style="background-color: #eff7f6;">
+
+    <div id="section4" data-scroll-index="4" class="p-10 border flex flex-col space-y-5 items-center" style="background-color: #eff7f6;">
       <div class="py-5"></div>
       <h3 class="text-3xl">漫漫在哪...</h3>
       <img src="img/map_01.jpg" alt="map" width="600"/>
-    </footer>
+      <!-- <h1 class="animated infinite bounce delay-2s">Example</h1> -->
+      <!-- <h1 class="animated infinite jello bounceIn">Example</h1> -->
+      <!-- <div class="wow jackInTheBox" data-wow-iteration="10">no working</div> -->
+    </div>
 
+    <footer class="p-4 flex flex-row items-center text-gray-50 justify-center" style="background-color: #4a4e69;">
+      <div class="">
+        <img class="rounded-lg animated jackInTheBox slow" src="img/footer_01.png" alt="footer img" width="200"/>
+        <span class="hidden">Waiting for you 4a4e69 26282D 9a8c98</span>
+      </div>
+      <div class="pl-10 flex flex-col space-y-2">
+        <h4 class="pb-2 ">
+          CONTACT
+        </h4>
+        <span class="text-sm"><a href="https://www.google.com/maps/dir//%E6%96%B0%E5%8C%97%E5%B8%82%E4%B8%AD%E5%92%8C%E5%8D%80%E6%99%AF%E5%B9%B3%E8%B7%AF375%E8%99%9F" target="_blank">新北市中和區景平路375號</a></span>
+        <div class="text-sm">Tel:&nbsp&nbsp<a href="tel:0953-732-177" target="_blank">0953-732-177</a> </div>
+        <span class="text-sm">營業時間：週一 ~ 週五  15:00~19:30（賣完為止）</span>
+        <div class="text-sm">
+          Copyright © 2021 漫漫山丘  All rights reserved.&nbsp&nbsp
+        </div>
+        <a class="text-sm" href="#" target="_blank">Designed by mikehuang</a> 
+      </div>
+    </footer>
 
     <div class="border py-2 hidden"><a data-scroll-goto="1" class="border-2 border-yellow-700 bg-yellow-700 text-white px-2">Back to top</a></div>
   </div>
@@ -215,6 +239,11 @@
         zIndex: 2147483647           // Z-Index for the overlay
       });
     });
+  </script>
+  <!-- <script src="wow.js"></script> -->
+  <script href="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+  <script>
+    new WOW().init();
   </script>
 </body>
 </html>
