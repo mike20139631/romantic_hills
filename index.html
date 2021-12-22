@@ -45,6 +45,7 @@
     <div id="section3" data-scroll-index="3" id="order" class="p-10 border flex flex-col space-y-5 items-center min-w-min" style="background-color: #f7d6e0;">
       <div class="py-5"></div>
       <h3 class="text-3xl">即刻預訂...</h3>
+      <!-- <form action=""> -->
       <div class="flex flex-col border shadow-xl  border-gray-300 p-10 rounded-2xl bg-white">
 
         <div class="flex flex-row border rounded-md space-x-3 py-2 min-w-max items-center">
@@ -53,7 +54,7 @@
         </div>
         <div class="flex flex-row border rounded-md space-x-3 py-2 min-w-max items-center">
           <h3 class="text-blue-800 font-bold text-lg">聯絡電話: </h3>
-          <input id="o_tel" type="text" placeholder="聯絡電話" class="border">
+          <input id="o_tel" type="text" placeholder="聯絡電話" class="border" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
         </div>
         <div class="flex flex-row border rounded-md space-x-3 py-2 min-w-max items-center">
           <h3 class="text-blue-800 font-bold text-lg">付款方式: </h3>
@@ -62,10 +63,10 @@
         </div>
         <div class="flex flex-row border rounded-md space-x-3 py-2 min-w-max items-center">
           <h3 class="text-blue-800 font-bold text-lg">取餐方式: </h3>
-          <!-- <form action=""> -->
+          
           <label><input type="radio" name="orderType" value="0" required checked> 外帶</label>
           <label><input type="radio" name="orderType" value="1" > 外送</label>
-          <!-- </form> -->
+          
           <div id="delivery_mark" class="pl-4" style="color:red;">*中和, 永和 滿30個甜甜圈可外送(需提前一天預訂)</div>
           <!-- display:none; -->
         </div>
@@ -187,6 +188,7 @@
             </div>
         </div>
       </div>
+      <!-- </form> -->
     </div>
 
     <div id="section4" data-scroll-index="4" class="p-10 border flex flex-col space-y-5 items-center" style="background-color: #eff7f6;">

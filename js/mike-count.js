@@ -74,6 +74,13 @@ function post_ajax(){
         alert("請選購產品。");
         return false;
     }
+    //電話格式檢查
+    var phoneno = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+    if( !(o_tel.match(phoneno)) ){
+        alert("電話格式錯誤，請重新輸入。");
+        return false;
+    }
+    
 
     var payment_value = +$("input[name='paymentType']:checked").val();
     var o_payment = "";
@@ -102,8 +109,15 @@ function post_ajax(){
             alert("請輸入外送地址。");
             return false;
         }
+        //地址檢查 需包含 中和 或 永和  (目前只送這兩處)
+        if(!addr.includes("中和") && !addr.includes("永和")){
+            alert("目前外送服務僅提供新北市[中和區, 永和區]，造成不便，敬請見諒。");
+            return false;            
+        }
         o_delivery_addr = addr;
     }
+    //test
+    // return;
 
     const order_list = [];
     for (var i = 1; i <= 5; i++){
