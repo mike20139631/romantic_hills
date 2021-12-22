@@ -12,7 +12,7 @@
 </head>
 <body>
   <div class="flex flex-col h-screen w-screen justify-between min-w-min">
-    <header class="w-screen py-5 border sticky top-0 z-50" style="background-color: #f7ebe8;">
+    <header class="w-screen py-5 border fixed top-0 z-50" style="background-color: #f7ebe8;">
       <div class="flex flex-row space-x-11 justify-center px-5">
         <div data-scroll-nav="1" class="cursor-pointer text-2xl font-bold text-purple-600" style="color: #7c90db;" >漫漫介紹</div>
         <div data-scroll-nav="2" class="cursor-pointer text-2xl font-bold text-purple-600" style="color: #ffa987;">漫漫美食</div>
@@ -34,12 +34,6 @@
         <img class="border rounded-md " src="img/introduce_05.jpg" alt="img" width="200" height="200"/>
         <img class="border rounded-md " src="img/introduce_06.jpg" alt="img" width="200" height="200"/>
         <img class="border rounded-md " src="img/introduce_07.jpg" alt="img" width="200" height="200"/>
-        <!-- <img src="img/introduce_02.jpg" alt="img" width="250"/>
-        <img src="img/introduce_03.jpg" alt="img" width="250"/>
-        <img src="img/introduce_04.jpg" alt="img" width="250"/>
-        <img src="img/introduce_05.jpg" alt="img" width="250"/>
-        <img src="img/introduce_06.jpg" alt="img" width="250"/>
-        <img src="img/introduce_07.jpg" alt="img" width="250"/> -->
       </div>
     </main>
     <div id="section2" data-scroll-index="2" id="menu" class="p-10 border flex flex-col space-y-5 items-center" style="background-color: #eff7f6;">
@@ -201,12 +195,12 @@
       <img src="img/map_01.jpg" alt="map" width="600"/>
       <!-- <h1 class="animated infinite bounce delay-2s">Example</h1> -->
       <!-- <h1 class="animated infinite jello bounceIn">Example</h1> -->
-      <!-- <div class="wow jackInTheBox" data-wow-iteration="10">no working</div> -->
+      <!-- <div class="wow jackInTheBox slow" data-wow-iteration="5">no working</div> -->
     </div>
 
     <footer class="p-4 flex flex-row items-center text-gray-50 justify-center" style="background-color: #4a4e69;">
       <div class="">
-        <img class="rounded-lg animated jackInTheBox slow" src="img/footer_01.png" alt="footer img" width="200"/>
+        <img class="rounded-lg wow jackInTheBox slow" data-wow-delay="0.3s" src="img/footer_01.png" alt="footer img" width="200"/>
         <span class="hidden">Waiting for you 4a4e69 26282D 9a8c98</span>
       </div>
       <div class="pl-10 flex flex-col space-y-2">
@@ -256,7 +250,7 @@
     });
   </script>
   <!-- <script src="wow.js"></script> -->
-  <script href="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
   <script>
     new WOW().init();
   </script>
